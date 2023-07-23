@@ -1,18 +1,18 @@
-import { useState } from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import Singup from './Singup'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Routes, Route } from "react-router-dom";
+import RegisterPage from "./components/Pages/RegisterPage";
+import LoginPage from "./components/Pages/LoginPage";
+import ErrorPage from "./components/Pages/ErrorPage";
+import HomePage from "./components/Pages/HomePage";
 
 function App() {
-
-
   return (
-    <>
-    <div>
-    </div>
-     
-    </>
-  )
+    <Routes>
+      <Route index element={<HomePage />}></Route>
+      <Route path="/Register" element={<RegisterPage />}></Route>
+      <Route path="/login" element={<LoginPage />}></Route>
+      <Route path="*" element={<ErrorPage />}></Route>
+    </Routes>
+  );
 }
 
-export default App
+export default App;
